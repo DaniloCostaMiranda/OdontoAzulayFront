@@ -1,0 +1,33 @@
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Sistema De Gestão</div>
+                <a class="nav-link" routerLink="/home">
+                    <div class="sb-nav-link-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    Painel Odonto-Simple
+                </a>
+                <div class="sb-sidenav-menu-heading">Cadastros</div>
+                <a class="nav-link collapsed" routerLink="/clientes" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-address-card"></i></div>
+                    Pacientes
+                </a>
+                <a class="nav-link collapsed" routerLink="/tratamentos/lista" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-tooth"></i></div>
+                    Tratamentos
+                </a>
+                <div class="sb-sidenav-menu-heading">Logout</div>
+                <a class="nav-link collapsed" (click)="logout();" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts"
+                    ><div class="sb-nav-link-icon"><i class="fas fa-sign-out-alt"></i></div>
+                    Sair
+                </a>
+                </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Usuário Logado:</div>
+            {{usuarioLogado}}
+        </div>
+    </nav>
+</div>

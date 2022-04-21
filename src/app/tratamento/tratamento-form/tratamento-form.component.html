@@ -1,0 +1,75 @@
+<h1 class="mt-4">Tratamento</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-bitem active">Novo</li>
+</ol>
+<div class="container">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-success" role="alert" *ngIf="success == true">
+                    Tratamento salvo/atualizado com sucesso !
+                  </div>
+                  <div class="alert alert-danger" role="alert" *ngFor="let erro of errors">
+                      {{erro}}
+                  </div>
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>Paciente:</label>
+                        <select class="form-control"
+                        [ngModelOptions]="{standalone: true}" 
+                        [(ngModel)]= "tratamentoIniciado.idPaciente">
+                            <option value="">Selecione...</option>
+                            <option *ngFor="let cliente of clientes" [ngValue]="cliente.id">
+                                {{cliente.nome}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Preço:</label>
+                            <input class="form-control" [(ngModel)]="tratamentoIniciado.preco" type="text" name="preco" id="inputPreco">
+                        </div>
+                    </div>
+                    
+                
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Dente:</label>
+                                <input class="form-control" [(ngModel)]="tratamentoIniciado.dente" type="text" name="dente" id="inputDente">
+                            </div>
+                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Data:</label>
+                            <input class="form-control" [(ngModel)]="tratamentoIniciado.data" type="text" name="data" id="inputData">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Status:</label>
+                            <input class="form-control" [(ngModel)]="tratamentoIniciado.status" type="text" name="status" id="inputStatus">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <button class="btn btn-success" type="submit">
+                            <i class="fa fa-save"></i> Salvar
+                        </button>
+                        <button class="btn btn-danger ml-1" type="button" (click)="voltarParaLista()">
+                            <i class="fa fa-arrow-alt-circle-left"></i> Voltar
+                        </button>
+                    
+                    </div>
+                        
+                </div>
+        </form>
+</div>

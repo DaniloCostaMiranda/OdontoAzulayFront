@@ -1,0 +1,71 @@
+<h1 class="mt-4">Tratamento</h1>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-bitem active">Consulta</li>
+</ol>
+<button type="button" routerLink='/tratamentos/form' class="btn btn-warning">
+    <i class="fas fa-plus"></i>Novo
+</button>
+<div class="container">
+    <form #pesquisaForm="ngForm" (submit)="consultar()">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="inputNome">Nome Paciente:</label>
+                <input type="text" [(ngModel)]="nome" 
+                name="nome"  class="form-control"
+                id="inputNome">
+            </div>
+            <div class="col-md-6">
+                <label for="inputStatus">Status:</label>
+                <input type="text" [(ngModel)]="status" 
+                name="status"  class="form-control"
+                id="inputStatus">
+            </div>
+            <!-- <div class="col-md-6">
+                <label for="inputStatus">Status:</label>
+                <select [(ngModel)]="status" class="form-control" [ngModelOptions]="{standalone: true}" >
+                    <option value="">Selecione...</option>
+                    <option *ngFor="let status of status" [value]="status">
+                        {{status}}
+                    </option>
+                </select>
+            </div> -->
+        </div>
+    <br/>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>Pesquisar
+                </button>
+            </div>
+        </div>
+    </form>
+    <br/>
+    <div class="row">
+        <div class="alert alert-warning" role="alert" *ngIf="message">
+            {{message}}
+          </div>
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Paciente</th>
+                        <th>Dente</th>
+                        <th>Status</th>
+                        <th>Data</th>
+                        <th>Preço</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let s of lista">
+                        <td>{{s.paciente.nome}}</td>
+                        <td>{{s.dente}}</td>
+                        <td>{{s.status}}</td>
+                        <td>{{s.data}}</td>
+                        <td>{{s.valor}}</td>   
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
