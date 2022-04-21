@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiURLBase: 'http://localhost:8080',
+  apiURLBase: 'https://odontotech.herokuapp.com',
   clientId: 'my-angular-app',
   clientSecret: '@321',
   obterTokenUrl: '/oauth/token'
